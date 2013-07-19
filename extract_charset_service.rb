@@ -21,7 +21,6 @@ module ExtractCharsetService
     end 
 
     class APIExtractCharset < R '/api_extract'
-
       def extract_from_json(data_string)
         begin
           JSON.parse data_string
@@ -31,28 +30,24 @@ module ExtractCharsetService
       end
 
       def compute_result (data_hash)
+        json_content_key = "text"
 
         case
         when data_hash.nil?
           {:success => false, :message => "json malformed"}
-        when ! data_hash.has_key?("text")
+        when ! data_hash.has_key?(json_content_key)
           {:success => false, :message => "json lacks a 'text' key"}
         else
-          {:success => true, :report => ExtractCharset::extract(data_hash["text"])}
+          {:success => true, :report => ExtractCharset::extract(data_hash[json_content_key])}
         end
       end
 
       def post
-        # data is a hash where key is "text"
-        # data = JSON.parse @request.body.read
-
+        # data should be a hash where key is "text"
+       
         data = extract_from_json(@request.body.read)
 
-        puts "pipo"
-        puts data.nil?
-
         @result = compute_result(data)
-        
         @headers['Content-Type'] = "application/json"
         @result.to_json(:root=>'response')
       end
