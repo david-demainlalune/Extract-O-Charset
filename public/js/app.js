@@ -3,11 +3,27 @@
 
 var dbg;
 
+
 function ExtractController($scope, $http){
 
-	$scope.textAreaContent = "pipo";
+	$scope.textAreaContent = "test";
+	$scope.report = {};
 
 	dbg = $scope;
+
+	var successNotification = function(message){
+	    $('#notifications').notify({
+			message: { text: message },
+			type: 'success'
+		}).show(); 
+	}
+
+	var errorNotification = function(message){
+	    $('#notifications').notify({
+			message: { text: message },
+			type: 'error'
+		}).show(); 
+	}
 
 	
 	var send = function(text){
@@ -20,10 +36,14 @@ function ExtractController($scope, $http){
             
             console.log("success");
             console.log(data);
+            errorNotification("hello");
+
+            $scope.report = data.report;
+
         }).
         error(function(data, status, headers, config){
             // flash.pushErrorMessage("error on update of " + $scope.document.inv);
-            console.log("error");
+            errorNotification("server error code " + status);
         });
     }
 

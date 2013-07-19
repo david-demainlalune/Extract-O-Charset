@@ -2,23 +2,31 @@
 <htm ng-app>
 <head>
   <meta charset="utf-8">
-
   <title>Extract Charset from text</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="css/style.css" rel="stylesheet" media="screen">
+  <script src="js/jquery-1.10.2.min.js"></script> 
+  <script src="js/bootstrap-transition.js"></script>
+  <script src="js/bootstrap-notify.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 	<script src="js/angular.min.js"></script>
 	<script src="js/app.js"></script>
 </head>
 
 <body>
 	<div ng-controller="ExtractController">
-  	<textarea spellcheck="false" class="span12" rows="20" ng-model="textAreaContent", ></textarea>
-  	<div>
-  		<button ng-click="extractCharSet()">submit</button>
-  	</div>
+    <div id="notifications"></div>
+    <textarea spellcheck="false" class="span12" rows="20" ng-model="textAreaContent"></textarea>
+    <div><button ng-click="extractCharSet()">submit</button></div>
+    <div class="report">
+      <p>{{report.lowers}}</p>
+      <p>{{report.uppers}}</p>
+      <p>{{report.digits}}</p>
+      <p>{{report.the_rest}}</p>
+      <p>{{report.glyph_count}}</p>
+    </div>
   </div>
 </body>
 
