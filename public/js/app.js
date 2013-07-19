@@ -14,7 +14,7 @@ function ExtractController($scope, $http){
 		
 		var data = {text: text};
 		console.log(data);
-
+		
 		$http({method: 'POST', url:'api_extract', data: data}).
         success(function(data, status, headers, config){
             
