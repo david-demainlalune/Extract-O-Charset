@@ -38,7 +38,7 @@ module ExtractCharsetService
         when ! data_hash.has_key?(json_content_key)
           {:success => false, :message => "json lacks a 'text' key"}
         else
-          {:success => true, :report => ExtractCharset::extract(data_hash[json_content_key])}
+          {:success => true, :report => ExtractCharset::extract(data_hash[json_content_key].to_s)}
         end
       end
 
