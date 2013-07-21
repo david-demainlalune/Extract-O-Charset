@@ -1,6 +1,8 @@
-# web service for extract_charset from a string
+# Extract-O-Charset
 
-uses camping a ruby micro framework 
+this is a web service that allows the extraction of all unique characters from a text generating a report.
+
+built with camping (a ruby web microframework), angularJs and twitter bootstrap.
 
 ## installation
 
@@ -10,6 +12,12 @@ bundle install
 
 bundle exec camping extract_charset_service
 
-## static hosting
+## heroku files
 
-http://stackoverflow.com/questions/12982620/how-to-serve-static-files-css
+confi.ru and procfile are required for heroku deployment
+
+## todo 
+
+add tests!!
+
+
