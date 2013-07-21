@@ -45,6 +45,7 @@ function ExtractController($scope, $http){
 
 	$scope.extractCharSet = function(){
 		send($scope.textAreaContent);
+		$scope.report = null;
 		successNotification("text submitted");
 	};
 }
