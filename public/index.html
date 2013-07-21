@@ -19,9 +19,12 @@
 	<div ng-controller="ExtractController">
     <div id="notifications"></div>
     <h1>Extract-O-Charset</h1>
-    <p>this page computes the set of unique characters found in a text</p>
-    <p>to generate a report:</p>
-    <p>copy and paste the text to be parsed in the text area below and press the submit button</p>
+    <p>this page computes the set of unique characters found in a text.</p>
+    <p>Requires utf-8 support in the browser.</p>
+    <p>Be sure to use a modern browser to fulfill this requirement.</p>
+    <br>
+    <p><strong>usage:</strong></p>
+    <p>copy and paste the text (utf-8 encoded) in the area below and press the submit button</p>
     <textarea spellcheck="false" class="span8" rows="20" ng-model="textAreaContent"></textarea>
     <div><button ng-click="extractCharSet()">submit</button></div>
     <div id="report">
@@ -38,8 +41,7 @@
       <p>{{report.glyph_count}}</p>
     </div>
     <div id="footer">
-
-      <small>built with <a href="http://camping.io/" target="_blank">Camping</a>, <a href="http://angularjs.org/" target="_blank">AngularJs</a> and <a href="http://twitter.github.io/bootstrap/" target="_blank">Twitter Bootstrap</a></small>
+      <small>built with <a href="http://camping.io/" target="_blank">Camping</a>, <a href="http://angularjs.org/" target="_blank">AngularJs</a> and <a href="http://twitter.github.io/bootstrap/" target="_blank">Twitter Bootstrap</a>.<br>source on <a href="https://github.com/david-demainlalune/Extract-O-Charset" target="_blank">Github.</a></small>
     </div>
   </div>
 </body>
