@@ -10,8 +10,8 @@ p{
 #notifications{
   position: fixed;
   top: 10%;
-  right: 30px;
-  width: 120px;
+  left: 700px;
+  width: 300px;
   padding: 2px;
 }
 

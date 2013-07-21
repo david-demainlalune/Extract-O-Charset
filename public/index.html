@@ -18,13 +18,19 @@
 <body>
 	<div ng-controller="ExtractController">
     <div id="notifications"></div>
-    <textarea spellcheck="false" class="span12" rows="20" ng-model="textAreaContent"></textarea>
+    <textarea spellcheck="false" class="span8" rows="20" ng-model="textAreaContent"></textarea>
     <div><button ng-click="extractCharSet()">submit</button></div>
-    <div class="report">
+    <div id="report">
+      <h2 ng-show="report">char set extraction report</h2>
+      <strong ng-show="report.lowers">lower case set:</strong>
       <p>{{report.lowers}}</p>
+      <strong ng-show="report.uppers">upper case set:</strong>
       <p>{{report.uppers}}</p>
+      <strong ng-show="report.digits">digits set:</strong>
       <p>{{report.digits}}</p>
+      <strong ng-show="report.the_rest">punctuation and rest set:</strong>
       <p>{{report.the_rest}}</p>
+      <strong ng-show="report.glyph_count">total unique characters (except whitespace and newlines):</strong>
       <p>{{report.glyph_count}}</p>
     </div>
   </div>
