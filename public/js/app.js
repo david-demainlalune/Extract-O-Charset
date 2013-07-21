@@ -2,10 +2,8 @@
 
 function ExtractController($scope, $http){
 
-	$scope.textAreaContent = "test1289HHH.-";
+	$scope.textAreaContent = "";
 	$scope.report = null;
-
-	dbg = $scope;
 
 	var successNotification = function(message){
 	    $('#notifications').notify({
