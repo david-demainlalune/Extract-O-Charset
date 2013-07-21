@@ -22,10 +22,10 @@ module ExtractCharset
 	end
 
 	def ExtractCharset.classify(chars_set)
-		lowers = ""
-		uppers = ""
-		digits = ""
-		the_rest = ""
+		lowers = []
+		uppers = []
+		digits = []
+		the_rest = []
 		
 		chars_set.each do |c|
 			case 
@@ -40,11 +40,12 @@ module ExtractCharset
 			end
 		end
 
-		{:lowers => lowers.chars.sort.join, 
-		 :uppers => uppers.chars.sort.join, 
-		 :digits => digits.chars.sort.join, 
-		 :the_rest => the_rest.chars.sort.join, 
-		 :glyph_count => [lowers.length, uppers.length, digits.length, the_rest.length].inject(:+)
+		{
+		 :lowers => lowers.sort.join, 
+		 :uppers => uppers.sort.join, 
+		 :digits => digits.sort.join, 
+		 :the_rest => the_rest.sort.join, 
+		 :glyph_count => [lowers.count, uppers.count, digits.count, the_rest.count].inject(:+) 
 		}
 	end
 
