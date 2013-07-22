@@ -16,8 +16,15 @@ bundle exec camping extract_charset_service.rb
 
 confi.ru and procfile are required for heroku deployment
 
+## tests
+
+minitests exist for the ExtractCharset module
+use the following command to run them
+
+run ruby spec/extract_spec.rb
+
 ## todo 
 
-add tests!!
+add integration tests
 
 
