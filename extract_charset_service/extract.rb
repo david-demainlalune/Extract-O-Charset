@@ -45,7 +45,7 @@ module ExtractCharset
 		 :uppers => uppers.sort.join, 
 		 :digits => digits.sort.join, 
 		 :the_rest => the_rest.sort.join, 
-		 :glyph_count => [lowers.count, uppers.count, digits.count, the_rest.count].inject(:+) 
+		 :glyph_count => lowers.count + uppers.count + digits.count + the_rest.count
 		}
 	end
 
